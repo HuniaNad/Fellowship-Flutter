@@ -1,12 +1,11 @@
 import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class AnimationProvider with ChangeNotifier {
   late double squareSize;
   late int colorIntensity;
-  double x = 0;
-  double y = 0;
+  late double x = 0;
+  late double y = 0;
   late double radius;
 
   int randomIntensity() {

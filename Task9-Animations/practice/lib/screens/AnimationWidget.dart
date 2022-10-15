@@ -12,11 +12,17 @@ class AnimationWidget extends StatefulWidget {
 
 class _AnimationWidgetState extends State<AnimationWidget> {
   @override
+  void initState() {
+    super.initState();
+    Provider.of<AnimationProvider>(context, listen: false).changeState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Consumer<AnimationProvider>(
       builder: ((context, provider, child) {
         return GestureDetector(
-          onTap: Provider.of<AnimationProvider>(context, listen: false).changeState(),
+          onTap: () => Provider.of<AnimationProvider>(context, listen: false).changeState(),
           child: Scaffold(
             backgroundColor: Colors.grey,
             appBar: AppBar(

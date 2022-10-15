@@ -14,11 +14,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ChangeNotifierProvider<AnimationProvider>(
-          create: (context) => AnimationProvider(),
-          child: const AnimationWidget()),
+    return ChangeNotifierProvider<AnimationProvider>(
+      create: (context) => AnimationProvider(),
+      child: const MaterialApp(
+        home: AnimationWidget(),
+      ),
     );
   }
 }
